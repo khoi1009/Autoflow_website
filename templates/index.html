@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Autoflow website</title>
+    {% load static %}
+
+    <link rel="stylesheet" href={% static 'main.css' %}>
+
+    <h1> This is my first try for the autoflow website</h1>
+    <a href="{% url 'contact_name' %}"> Contact us</a>
+  </head>
+  <body>
+
+    <button type="button" onclick="button_change_color()"> Click to change color</button>
+    <img src={% static 'elephant.jpg' %} alt="">
+    <a href="{% url "result_page" %}"> Take me result page</a>
+
+    <form action={% url "result_page" %} >
+      {% csrf_token %}
+      <input type ="text" name="user_input" >
+
+      <input type= "submit" value="Click me">
+    </form>
+
+    <script type="text/javascript" src={% static 'main.js' %}>
+    </script>
+
+
+
+
+  </body>
+</html>
